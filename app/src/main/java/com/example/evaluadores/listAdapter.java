@@ -1,6 +1,7 @@
 package com.example.evaluadores;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -52,7 +53,9 @@ public class listAdapter extends RecyclerView.Adapter<listAdapter.ViewHolder>
         holder.imgFoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(holder.itemView.getContext(), MainEvaluados.class);
+                intent.putExtra("idevaluador", holder.idevaluador.getText());
+                holder.itemView.getContext().startActivity(intent);
             }
         });
     }

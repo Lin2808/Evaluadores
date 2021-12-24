@@ -40,7 +40,8 @@ public class MainEvaluados extends AppCompatActivity
 
     private void ExtraerEvaluados()
     {
-        String URLstring = "https://uealecpeterson.net/ws/listadoaevaluar.php?e=1712896529";
+        String idEvaluador = getIntent().getExtras().getString("idevaluador");
+        String URLstring = "https://uealecpeterson.net/ws/listadoaevaluar.php?e=" + idEvaluador;
         StringRequest stringRequest = new StringRequest(Request.Method.GET, URLstring,
                 new Response.Listener<String>() {
                     @Override
