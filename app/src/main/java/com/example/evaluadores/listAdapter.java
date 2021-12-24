@@ -53,9 +53,10 @@ public class listAdapter extends RecyclerView.Adapter<listAdapter.ViewHolder>
         holder.imgFoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(holder.itemView.getContext(), MainEvaluados.class);
+                Intent intent = new Intent(context, MainEvaluados.class);
                 intent.putExtra("idevaluador", holder.idevaluador.getText());
-                holder.itemView.getContext().startActivity(intent);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent);
             }
         });
     }
